@@ -20,3 +20,5 @@ GIVEN THAT I want to eat well when I travel
 WHEN I select a city and cousine type from the app
 THEN I will have a list of highly rated restaurants and breweries in the area
 
+
+
