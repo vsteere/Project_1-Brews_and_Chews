@@ -2,7 +2,7 @@
 console.log("hello")
 
 //open brewery API AJAX call
-
+//update IDs for the six recommendation divs, ID for ther search button and ID for the input text box
 $(document).ready(function () {
 
     //variables defining the six boxes where the brewery information will go
@@ -12,12 +12,23 @@ $(document).ready(function () {
     var box4 = $("#box4");
     var box5 = $("#box5");
     var box6 = $("#box6");
+    //this is the search button
+    var searchNow = $("#searchNow");
+   //this is the text input
+    var test = $("#test");
 
     //function and AJAX functioning as Designed
     function breweryByname() {
-        var Location = $("#test").val().trim();
+        var Location = $(test).val().trim();
         var breweryURL = "https://api.openbrewerydb.org/breweries?by_city=" + Location;
         console.log("hello");
+
+        $(box1).empty();
+        $(box2).empty();
+        $(box3).empty();
+        $(box4).empty();
+        $(box5).empty();
+        $(box6).empty();
 
 
         $.ajax({
@@ -192,7 +203,7 @@ $(document).ready(function () {
 
 
 //this works. This is the event clicker that will run the brewery function. need to associate it with a search button
-$("#searchNow").on("click", function (event) {
+$(searchNow).on("click", function (event) {
     event.preventDefault();
     console.log("clicking works");
     breweryByname();
