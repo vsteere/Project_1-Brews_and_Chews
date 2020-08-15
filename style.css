@@ -1,0 +1,15 @@
+
+  .w3-container{
+    background-color: aquamarine;
+    color:  navy;
+  }
+  .w3-containerFooter{
+    background-color: aquamarine;
+    text-align: center;
+    color: navy;
+  }
+  body {
+    background-color: #F8F8F8;
+  }
+  img {
+    opacity: 0.60;
