@@ -83,8 +83,8 @@ $(document).ready(function () {
                         cuisine1p.text(`Cuisine type: ${cuisine1}`);
                         box1.append(cuisine1p);
 
-                        //rating of restaurant
-                        let rate1 = parseInt(response.restaurants[0].restaurant.user_rating.aggregate_rating)
+                        //rating of restaurant; converted to float to allow decimals 
+                        let rate1 = parseFloat(response.restaurants[0].restaurant.user_rating.aggregate_rating);
                         let rate1p = $("<p>");
                         rate1p.text(`Diner Rating: ${rate1}`);
                         box1.append(rate1p);
@@ -137,7 +137,7 @@ $(document).ready(function () {
                         box2.append(cuisine2p);
 
                         //rating of restaurant
-                        let rate2 = parseInt(response.restaurants[1].restaurant.user_rating.aggregate_rating)
+                        let rate2 = parseFloat(response.restaurants[1].restaurant.user_rating.aggregate_rating)
                         let rate2p = $("<p>");
                         rate2p.text(`Diner Rating: ${rate2}`);
                         box2.append(rate2p);
@@ -190,7 +190,7 @@ $(document).ready(function () {
                         box3.append(cuisine3p);
 
                         //rating of restaurant
-                        let rate3 = parseInt(response.restaurants[2].restaurant.user_rating.aggregate_rating)
+                        let rate3 = parseFloat(response.restaurants[2].restaurant.user_rating.aggregate_rating)
                         let rate3p = $("<p>");
                         rate3p.text(`Diner Rating: ${rate3}`);
                         box3.append(rate3p);
@@ -244,7 +244,7 @@ $(document).ready(function () {
                         box4.append(cuisine4p);
 
                         //rating of restaurant
-                        let rate4 = parseInt(response.restaurants[3].restaurant.user_rating.aggregate_rating)
+                        let rate4 = parseFloat(response.restaurants[3].restaurant.user_rating.aggregate_rating)
                         let rate4p = $("<p>");
                         rate4p.text(`Diner Rating: ${rate4}`);
                         box4.append(rate4p);
@@ -297,7 +297,7 @@ $(document).ready(function () {
                         box5.append(cuisine5p);
 
                         //rating of restaurant
-                        let rate5 = parseInt(response.restaurants[4].restaurant.user_rating.aggregate_rating)
+                        let rate5 = parseFloat(response.restaurants[4].restaurant.user_rating.aggregate_rating)
                         let rate5p = $("<p>");
                         rate5p.text(`Diner Rating: ${rate5}`);
                         box5.append(rate5p);
@@ -333,7 +333,60 @@ $(document).ready(function () {
                             text: "Link to Website",
                             href: web5
                         })
-                        box4.append(web5a);
+                        box5.append(web5a);
+
+                        //box 6 data
+
+                        //name of restaurant
+                        let name6 = response.restaurants[5].restaurant.name;
+                        let name6h = $("<h3>");
+                        name6h.text(`Name: ${name6}`);
+                        box6.append(name6h);
+
+                        //cuisine type
+                        let cuisine6 = response.restaurants[5].restaurant.cuisines;
+                        let cuisine6p = $("<p>");
+                        cuisine6p.text(`Cuisine type: ${cuisine6}`);
+                        box6.append(cuisine6p);
+
+                        //rating of restaurant
+                        let rate6 = parseFloat(response.restaurants[5].restaurant.user_rating.aggregate_rating)
+                        let rate6p = $("<p>");
+                        rate6p.text(`Diner Rating: ${rate6}`);
+                        box6.append(rate6p);
+
+                        //change color of rating based on scale
+                        if (rate6 <= 3) {
+                            rate6p.css("color", "red")
+                        }
+                        else if (rate6 >= 4) {
+                            rate6p.css("color", "green")
+                        }
+                        else {
+                            rate6p.css("color", "#fc8c03")
+                        };
+
+                        // phone of restaurant
+                        let phone6 = response.restaurants[5].restaurant.phone_numbers;
+                        let phone6p = $("<p>");
+                        phone6p.text(`Phone: ${phone6}`);
+                        box6.append(phone6p);
+
+
+                        //address of restaurant
+                        let addy6 = response.restaurants[5].restaurant.location.address;
+                        let addy6p = $("<p>");
+                        addy6p.text(`Address: ${addy6}`);
+                        box6.append(addy6p);
+
+                        //website
+                        let web6 = response.restaurants[5].restaurant.url;
+                        //found this syntax on stackoverflow
+                        let web6a = $("<a />", {
+                            text: "Link to Website",
+                            href: web6
+                        })
+                        box6.append(web6a);
 
 
 
