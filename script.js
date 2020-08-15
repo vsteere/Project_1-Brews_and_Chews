@@ -6,20 +6,20 @@ console.log("hello")
 $(document).ready(function () {
 
     //variables defining the six boxes where the brewery information will go
-    var box1 = $("#box1");
-    var box2 = $("#box2");
-    var box3 = $("#box3");
-    var box4 = $("#box4");
-    var box5 = $("#box5");
-    var box6 = $("#box6");
+    var box1 = $("#bBox1");
+    var box2 = $("#bBox2");
+    var box3 = $("#bBox3");
+    var box4 = $("#bBox4");
+    var box5 = $("#bBox5");
+    var box6 = $("#bBox6");
     //this is the search button
     var searchNow = $("#searchNow");
    //this is the text input
-    var test = $("#test");
+    var brewSearch = $("#brewSearch");
 
     //function and AJAX functioning as Designed
     function breweryByname() {
-        var Location = $(test).val().trim();
+        var Location = $(brewSearch).val().trim();
         var breweryURL = "https://api.openbrewerydb.org/breweries?by_city=" + Location;
         console.log("hello");
 

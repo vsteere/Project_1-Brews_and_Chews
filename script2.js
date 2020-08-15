@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 
     //variable for the submit button
-    const search = $("#search");
+    const search = $("#foodSearch");
 
     function foodSearch() {
         //clearing divs of old data
