@@ -14,7 +14,7 @@ $(document).ready(function () {
     var box6 = $("#bBox6");
     //this is the search button
     var searchNow = $("#searchNow");
-   //this is the text input
+    //this is the text input
     var brewSearch = $("#brewSearch");
 
     //function and AJAX functioning as Designed
@@ -61,9 +61,11 @@ $(document).ready(function () {
             box1.append(brewPhone1p);
 
             var brewWeb1 = response[0].website_url;
-            var brewWeb1p = $("<p>");
-            brewWeb1p.text(`Website: ${brewWeb1}`);
-            box1.append(brewWeb1p);
+            let brewWeb1a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb1
+            })
+            box1.append(brewWeb1a);
 
             //box 2 data
             var brewName2 = response[1].name;
@@ -87,9 +89,11 @@ $(document).ready(function () {
             box2.append(brewPhone2p);
 
             var brewWeb2 = response[1].website_url;
-            var brewWeb2p = $("<p>");
-            brewWeb2p.text(`Website: ${brewWeb2}`);
-            box2.append(brewWeb2p);
+            let brewWeb2a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb2
+            })
+            box2.append(brewWeb2a);
 
             //box 3 data
             var brewName3 = response[2].name;
@@ -113,9 +117,11 @@ $(document).ready(function () {
             box3.append(brewPhone3p);
 
             var brewWeb3 = response[2].website_url;
-            var brewWeb3p = $("<p>");
-            brewWeb3p.text(`Website: ${brewWeb3}`);
-            box3.append(brewWeb3p);
+            let brewWeb3a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb3
+            })
+            box3.append(brewWeb3a);
 
             //box 4 data
             var brewName4 = response[3].name;
@@ -139,9 +145,11 @@ $(document).ready(function () {
             box4.append(brewPhone4p);
 
             var brewWeb4 = response[3].website_url;
-            var brewWeb4p = $("<p>");
-            brewWeb4p.text(`Website: ${brewWeb4}`);
-            box4.append(brewWeb4p);
+            let brewWeb4a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb4
+            })
+            box4.append(brewWeb4a);
 
             //box 5 data
             var brewName5 = response[4].name;
@@ -165,35 +173,39 @@ $(document).ready(function () {
             box5.append(brewPhone5p);
 
             var brewWeb5 = response[4].website_url;
-            var brewWeb5p = $("<p>");
-            brewWeb5p.text(`Website: ${brewWeb5}`);
-            box5.append(brewWeb5p);
+            let brewWeb5a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb5
+            })
+            box5.append(brewWeb5a);
 
-             //box 6 data
-             var brewName6 = response[5].name;
-             var brewname6H = $("<h5>");
-             brewname6H.text(`Name: ${brewName6}`);
-             box6.append(brewname6H);
- 
-             var brewType6 = response[5].brewery_type;
-             var brewType6p = $("<p>");
-             brewType6p.text(`Type: ${brewType6}`)
-             box5.append(brewType6p);
- 
-             var brewStreet6 = response[5].street;
-             var brewstreet6P = $("<p>");
-             brewstreet6P.text(`Address: ${brewStreet6}`);
-             box5.append(brewstreet6P);
- 
-             var brewPhone6 = response[5].phone;
-             var brewPhone6p = $("<p>");
-             brewPhone6p.text(`Phone Number: ${brewPhone6}`);
-             box6.append(brewPhone6p);
- 
-             var brewWeb6 = response[5].website_url;
-             var brewWeb6p = $("<p>");
-             brewWeb6p.text(`Website: ${brewWeb6}`);
-             box6.append(brewWeb6p);
+            //box 6 data
+            var brewName6 = response[5].name;
+            var brewname6H = $("<h5>");
+            brewname6H.text(`Name: ${brewName6}`);
+            box6.append(brewname6H);
+
+            var brewType6 = response[5].brewery_type;
+            var brewType6p = $("<p>");
+            brewType6p.text(`Type: ${brewType6}`)
+            box6.append(brewType6p);
+
+            var brewStreet6 = response[5].street;
+            var brewstreet6P = $("<p>");
+            brewstreet6P.text(`Address: ${brewStreet6}`);
+            box6.append(brewstreet6P);
+
+            var brewPhone6 = response[5].phone;
+            var brewPhone6p = $("<p>");
+            brewPhone6p.text(`Phone Number: ${brewPhone6}`);
+            box6.append(brewPhone6p);
+
+            var brewWeb6 = response[5].website_url;
+            let brewWeb6a = $("<a />", {
+                text: "Link to Website",
+                href: brewWeb6
+            })
+            box6.append(brewWeb6a);
 
 
         });
@@ -202,11 +214,11 @@ $(document).ready(function () {
 
 
 
-//this works. This is the event clicker that will run the brewery function. need to associate it with a search button
-$(searchNow).on("click", function (event) {
-    event.preventDefault();
-    console.log("clicking works");
-    breweryByname();
+    //this works. This is the event clicker that will run the brewery function. need to associate it with a search button
+    $(searchNow).on("click", function (event) {
+        event.preventDefault();
+        console.log("clicking works");
+        breweryByname();
     });
 
 })
